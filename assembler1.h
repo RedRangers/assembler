@@ -19,6 +19,7 @@ using std::string;
 //!
 bool Addit( std::vector<int>& code, string& line )
 {
+
     if( line == STR_X0 )
     {
         code.push_back( CODE_X0 );
@@ -81,7 +82,8 @@ void ToCode( std::vector<int>& code, std::map< string, int >& link )
 
                 try
                 {
-                    code.push_back( std::stoi( substr2 ) );
+                    code.push_back( std::stoi( substr2 ) );//заменить на си проверки
+                    flag = true;
                 }
                 catch(...)
                 {
@@ -93,14 +95,7 @@ void ToCode( std::vector<int>& code, std::map< string, int >& link )
             {
                 code.push_back( CODE_POP );
 
-                try
-                {
-                    code.push_back( std::stoi( substr2 ) );
-                }
-                catch( ... )
-                {
-                    flag = Addit( code, substr2 );
-                }
+                flag = Addit( code, substr2 );
 
             }
 
@@ -129,6 +124,54 @@ void ToCode( std::vector<int>& code, std::map< string, int >& link )
             if( substr1 == STR_CALL )
             {
                 code.push_back( CODE_CALL );
+                code.push_back( CHIPER_LINK );
+
+                flag = true;
+            }
+
+            if( substr1 == STR_JE )
+            {
+                code.push_back( CODE_JE );
+                code.push_back( CHIPER_LINK );
+
+                flag = true;
+            }
+
+            if( substr1 == STR_JA )
+            {
+                code.push_back( CODE_JA );
+                code.push_back( CHIPER_LINK );
+
+                flag = true;
+            }
+
+            if( substr1 == STR_JAE )
+            {
+                code.push_back( CODE_JAE );
+                code.push_back( CHIPER_LINK );
+
+                flag = true;
+            }
+
+            if( line == STR_JB )
+            {
+                code.push_back( CODE_JB );
+                code.push_back( CHIPER_LINK );
+
+                flag = true;
+            }
+
+            if( substr1 == STR_JBE )
+            {
+                code.push_back( CODE_JBE );
+                code.push_back( CHIPER_LINK );
+
+                flag = true;
+            }
+
+            if( substr1 == STR_JNE )
+            {
+                code.push_back( CODE_JNE );
                 code.push_back( CHIPER_LINK );
 
                 flag = true;
@@ -172,51 +215,10 @@ void ToCode( std::vector<int>& code, std::map< string, int >& link )
                 flag = true;
             }
 
-            if( line == STR_JE )
-            {
-                code.push_back( CODE_JE );
-
-                flag = true;
-            }
-
-            if( line == STR_JA )
-            {
-                code.push_back( CODE_JA );
-
-                flag = true;
-            }
-
-            if( line == STR_JAE )
-            {
-                code.push_back( CODE_JAE );
-
-                flag = true;
-            }
-
-            if( line == STR_JB )
-            {
-                code.push_back( CODE_JB );
-
-                flag = true;
-            }
-
-            if( line == STR_JBE )
-            {
-                code.push_back( CODE_JBE );
-
-                flag = true;
-            }
-
-            if( line == STR_JNE )
-            {
-                code.push_back( CODE_JNE );
-
-                flag = true;
-            }
-
             if( line == STR_RET )
             {
                 code.push_back( CODE_RET );
+                code.push_back( CHIPER_LINK );
 
                 flag = true;
             }
@@ -226,7 +228,6 @@ void ToCode( std::vector<int>& code, std::map< string, int >& link )
                 code.push_back( CODE_END );
                 flag = false;
             }
-
         }
     }
 

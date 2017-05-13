@@ -5,7 +5,7 @@
 using std::string;
 
 const int CHIPER_LINK  = -1;
-
+//enum
 const string STR_END  = "end";
 const int CODE_END    = 0;
 
