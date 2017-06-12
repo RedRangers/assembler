@@ -1,0 +1,65 @@
+#ifndef CODER_H
+#define CODER_H
+#include <iostream>
+#include"key.h"
+
+using std::cin;
+using std::cout;
+
+bool ToCode()
+{
+    std::string com1;
+    com1.clear();
+    
+    std::string rez;
+    rez.clear();
+    
+    int com2 = 0;
+    
+    cin >> com1;
+    
+    if( com1 == end.Des )
+        rez += ( char )( end.Code + ( int )'0' );
+    
+    if( com1 == push.Des )
+        rez += ( char )( push.Code + ( int )'0' );
+    
+    if( com1 == pop.Des )
+        rez += ( char )( pop.Code + ( int )'0' );
+    
+    if( com1 == add.Des )
+        rez += ( char )( add.Code + ( int )'0' );
+    
+    if( com1 == sub.Des )
+        rez += ( char )( sub.Code + ( int )'0' );
+    
+    if( com1 == div.Des )
+        rez += ( char )( div.Code + ( int )'0' );
+    
+    if( com1 == mult.Des )
+        rez += ( char )( mult.Code + ( int )'0' );
+    
+    if( com1 == push.Des )
+        rez += ( char )( push.Code + ( int )'0' );
+    
+    if( com1 == push.Des )
+        rez += ( char )( push.Code + ( int )'0' );
+    
+    if( com1 == push.Des )
+        rez += ( char )( push.Code + ( int )'0' );
+    
+    if( com1 == push.Des )
+        rez += ( char )( push.Code + ( int )'0' );
+    
+    if( com1 == push.Des )
+        rez += ( char )( push.Code + ( int )'0' );
+    
+    if( com1 == push.Des )
+        rez += ( char )( push.Code + ( int )'0' );
+    
+    if( com1 == push.Des )
+        rez += ( char )( push.Code + ( int )'0' );
+    
+}
+
+#endif // CODER_H
