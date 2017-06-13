@@ -2,9 +2,11 @@
 #define CODER_H
 #include<iostream>
 #include<fstream>
+#include<string>
 #include<map>
 #include<cassert>
 #include<vector>
+#include<cstdlib>
 #include"key.h"
 
 using std::cin;
@@ -80,12 +82,12 @@ void ToCode( std::vector<int>& code, std::map< string, int >& link )
             {
                 code.push_back( CODE_PUSH );
 
-                try
+                if( atoi( substr2.c_str() ) != 0 || substr2 == "0" )
                 {
-                    code.push_back( std::stoi( substr2 ) );//заменить на си проверки
+                    code.push_back( atoi( substr2.c_str() ) );
                     flag = true;
                 }
-                catch(...)
+                else
                 {
                     flag = Addit( code, substr2 );
                 }
@@ -103,11 +105,12 @@ void ToCode( std::vector<int>& code, std::map< string, int >& link )
             {
                 code.push_back( CODE_POW );
 
-                try
+                if( atoi( substr2.c_str() ) != 0 || substr2 == "0" )
                 {
-                    code.push_back( std::stoi( substr2 ) );
+                    code.push_back( atoi( substr2.c_str() ) );
+                    flag = true;
                 }
-                catch( ... )
+                else
                 {
                     cout << "Incorrect type of degree " << endl;
                 }

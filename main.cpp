@@ -1,6 +1,7 @@
 #include<iostream>
 #include<fstream>
 #include<vector>
+#include<map>
 #include"assembler1.h"
 #include"assembler2.h"
 
