@@ -229,15 +229,14 @@ void ToCode( std::vector<int>& code, std::map< string, int >& link )
             if( line == STR_END )
             {
                 code.push_back( CODE_END );
-                flag = false;
+                flag = true;
             }
         }
     }
 
-    if( !flag && line != STR_END )
+    if( !flag )
         cout << "Error in line: " << i + 1 << " Line: " << line << endl;
-    else
-        cout << "The coding is finished" << endl;
+
 
     file.close();
 }
